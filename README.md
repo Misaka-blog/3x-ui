@@ -1,14 +1,5 @@
-# 3X-UI
-
-<p align="center"><a href="#"><img src="./media/3X-UI.png" alt="Image"></a></p>
 
 **一个更好的面板 • 基于Xray Core构建**
-
-[![](https://img.shields.io/github/v/release/misaka-blog/3x-ui.svg)](https://github.com/Misaka-blog/3x-ui/releases)
-[![](https://img.shields.io/github/actions/workflow/status/misaka-blog/3x-ui/release.yml.svg)](#)
-[![GO Version](https://img.shields.io/github/go-mod/go-version/misaka-blog/3x-ui.svg)](#)
-[![Downloads](https://img.shields.io/github/downloads/misaka-blog/3x-ui/total.svg)](#)
-[![License](https://img.shields.io/badge/license-GPL%20V3-blue.svg?longCache=true)](https://www.gnu.org/licenses/gpl-3.0.en.html)
 
 > **Disclaimer:** 此项目仅供个人学习交流，请不要用于非法目的，请不要在生产环境中使用。
 
@@ -78,7 +69,6 @@ case "${ARCH}" in
 esac
 
 
-wget https://github.com/Misaka-blog/3x-ui/releases/latest/download/x-ui-linux-${XUI_ARCH}.tar.gz
 ```
 
 2. 下载压缩包后，执行以下命令安装或升级 x-ui：
@@ -117,27 +107,6 @@ systemctl restart x-ui
 
 #### 使用
 
-1. 安装Docker：
-
-   ```sh
-   bash <(curl -sSL https://get.docker.com)
-   ```
-
-2. 克隆仓库：
-
-   ```sh
-   git clone https://github.com/Misaka-blog/3x-ui.git
-   cd 3x-ui
-   ```
-
-3. 运行服务：
-
-   ```sh
-   docker compose up -d
-   ```
-
-   或
-
    ```sh
    docker run -itd \
       -e XRAY_VMESS_AEAD_FORCED=false \
@@ -149,23 +118,8 @@ systemctl restart x-ui
       ghcr.io/misaka-blog/3x-ui:latest
    ```
 
-更新至最新版本
 
-   ```sh
-    cd 3x-ui
-    docker compose down
-    docker compose pull 3x-ui
-    docker compose up -d
-   ```
 
-从Docker中删除3x-ui 
-
-   ```sh
-    docker stop 3x-ui
-    docker rm 3x-ui
-    cd --
-    rm -r 3x-ui
-   ```
 
 </details>
 
@@ -239,15 +193,15 @@ systemctl restart x-ui
 
   ### 信息
 
-- **端口：** 2053
+- **端口：** 54321
 - **用户名 & 密码：** 当您跳过设置时，此项会随机生成。
 - **数据库路径：**
   - /etc/x-ui/x-ui.db
 - **Xray 配置路径：**
   - /usr/local/x-ui/bin/config.json
 - **面板链接（无SSL）：**
-  - http://ip:2053/panel
-  - http://domain:2053/panel
+  - http://ip:54321/panel
+  - http://domain:54321/panel
 - **面板链接（有SSL）：**
   - https://domain:2053/panel
  
@@ -255,34 +209,7 @@ systemctl restart x-ui
 
 ## [WARP 配置](https://gitlab.com/fscarmen/warp)
 
-<details>
-  <summary>点击查看 WARP 配置</summary>
 
-#### 使用
-
-如果要在 v2.1.0 之前使用 WARP 路由，请按照以下步骤操作：
-
-**1.** 在 **SOCKS Proxy Mode** 模式中安装Wrap
-
-   ```sh
-   bash <(curl -sSL https://raw.githubusercontent.com/hamid-gh98/x-ui-scripts/main/install_warp_proxy.sh)
-   ```
-
-**2.** 如果您已经安装了 warp，您可以使用以下命令卸载：
-
-   ```sh
-   warp u
-   ```
-
-**3.** 在面板中打开您需要的配置
-
-   配置:
-
-   - Block Ads
-   - Route Google + Netflix + Spotify + OpenAI (ChatGPT) to WARP
-   - Fix Google 403 error
-
-</details>
 
 ## IP 限制
 
@@ -446,25 +373,3 @@ XUI_BIN_FOLDER="bin" XUI_DB_FOLDER="/etc/x-ui" go build main.go
 
 </details>
 
-## 预览
-
-![1](./media/1.png)
-![2](./media/2.png)
-![3](./media/3.png)
-![4](./media/4.png)
-![5](./media/5.png)
-![6](./media/6.png)
-![7](./media/7.png)
-
-## 特别感谢
-
-- [alireza0](https://github.com/alireza0/)
-
-## 致谢
-
-- [Iran v2ray rules](https://github.com/chocolate4u/Iran-v2ray-rules) (License: **GPL-3.0**): _Enhanced v2ray/xray and v2ray/xray-clients routing rules with built-in Iranian domains and a focus on security and adblocking._
-- [Vietnam Adblock rules](https://github.com/vuong2023/vn-v2ray-rules) (License: **GPL-3.0**): _A hosted domain hosted in Vietnam and blocklist with the most efficiency for Vietnamese._
-
-## Star 趋势
-
-[![Stargazers over time](https://starchart.cc/Misaka-blog/3x-ui.svg)](https://starchart.cc/Misaka-blog/3x-ui)
